@@ -1,0 +1,9 @@
+# dsh-comment-stripper bundle patch: retires the base `fs-sandbox` provider
+# row and inserts this package's filesystem implementation instead, so every
+# ctx.fs write/edit flows through the comment stripper.
+- id: fs-sandbox
+  disabled: true
+
+- insert:
+    - id: comment-stripper-fs
+      name: dsh-comment-stripper

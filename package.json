@@ -1,0 +1,41 @@
+{
+  "name": "dsh-comment-stripper",
+  "version": "1.0.0",
+  "description": "DSH plugin: strips // and /* */ code comments from content written through ctx.fs writeText and editText, keeping the on-disk files comment-free.",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "Ryan Yu Chen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pleix64/dsh-comment-stripper.git"
+  },
+  "files": [
+    "lib/",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/stripper.test.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "comments"
+  ],
+  "engines": {
+    "node": ">=22.12.0",
+    "dsh": "^0.2.0-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5",
+    "@deepseek-ai/dsh-fs-sandbox": ">=0.2.0-rc.1"
+  }
+}
